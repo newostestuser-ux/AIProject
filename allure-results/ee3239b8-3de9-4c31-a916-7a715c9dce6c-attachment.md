@@ -1,0 +1,143 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: fundTransferPage.spec.ts >> fund transfer
+- Location: tests\fundTransferPage.spec.ts:11:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.innerText: Target page, context or browser has been closed
+Call log:
+  - waiting for getByText('review-transferType', { exact: true })
+
+```
+
+# Test source
+
+```ts
+  1   | import { Page,Locator } from "@playwright/test";
+  2   | 
+  3   | export class FundTransferPage{
+  4   | 
+  5   |     private readonly page:Page;
+  6   |     private readonly fundTransferbtn:Locator;
+  7   |     private readonly successmsgofFT:Locator;
+  8   |     private readonly optforFundTransfer:Locator;
+  9   |     private readonly selectbenPage:Locator;
+  10  |     private readonly continuebtn:Locator;//3 times
+  11  |     private readonly listOfBeneficiary:Locator;
+  12  |     private readonly nextPageBtn:Locator;
+  13  |     private readonly enterAmount:Locator;
+  14  |     private readonly cnfOTPbtn:Locator;
+  15  |     private readonly savingamountInfo:Locator;
+  16  |     private readonly reviewPage:Locator;
+  17  | 
+  18  |     //payment review loactor
+  19  |     private readonly transferType:Locator;
+  20  |     private readonly fromAccountNum:Locator;
+  21  |     private readonly toAccountNum:Locator;
+  22  |     private readonly cnfamount:Locator;
+  23  | 
+  24  |    
+  25  |     //constructor
+  26  |     constructor(page:Page){
+  27  |         this.page=page;
+  28  |         this.fundTransferbtn=this.page.getByTestId("qa-FundTransfer")
+  29  |         this.successmsgofFT=this.page.locator("h2[class='text-base font-semibold text-[#1A1A2E] mb-4']")
+  30  |         this.optforFundTransfer=this.page.getByRole("heading",{name:'NEFT'})
+  31  |        // this.optforFundTransfer=page.getByTestId("type-NEFT")
+  32  |         this.continuebtn=this.page.getByRole("button",{name:"Continue"})
+  33  |         this.selectbenPage=this.page.locator("h2[class='text-base font-semibold text-[#1A1A2E] mb-4']")
+  34  |         this.listOfBeneficiary=this.page.locator("button[data-testid*='bene-BEN']")
+  35  |         this.nextPageBtn=this.page.getByText('Enter Amount', { exact: true });
+  36  |         this.enterAmount=this.page.getByTestId("transferAmount")
+  37  |         this.savingamountInfo=this.page.locator("span[class='ml-3 text-gray-500']")
+  38  |         this.reviewPage=this.page.getByText('Review Transfer',{exact:true})
+  39  | 
+  40  |         //payment review locators
+  41  |         this.transferType=this.page.getByText('review-transferType',{exact:true})
+  42  |         this.fromAccountNum=this.page.getByTestId('review-fromAccount')
+  43  |         this.toAccountNum=this.page.locator("p[class='text-xs text-gray-500']")
+  44  |         this.cnfamount=this.page.locator("span[class='text-xs text-gray-500']")
+  45  |         this.cnfOTPbtn=page.getByTestId("confirmTransferBtn")
+  46  |     }
+  47  | 
+  48  | 
+  49  |     async selectFundTransfer():Promise<any>{
+  50  |         await this.fundTransferbtn.click();
+  51  |         return await this.successmsgofFT.innerText()
+  52  |     }
+  53  | 
+  54  |     async selectPaymentMethod():Promise<any>{
+  55  |         await this.optforFundTransfer.click()
+  56  |         await this.continuebtn.click()
+  57  |         return await this.selectbenPage.innerText();
+  58  |     }
+  59  | 
+  60  |     async selectBeneficiary(): Promise<any> {
+  61  |         let prevHeight = 0;
+  62  | 
+  63  |         while (true) {
+  64  |             for (let i = 0; i < await this.listOfBeneficiary.count(); i++) {
+  65  |                 if ((await this.listOfBeneficiary.nth(i).innerText()).includes("Amit Verma")) {
+  66  |                     await this.listOfBeneficiary.nth(i).click();
+  67  |                     await this.continuebtn.click();
+  68  | 
+  69  |                     return await this.nextPageBtn.innerText();
+  70  |                 }
+  71  |             }
+  72  | 
+  73  |             await this.page.evaluate(() => {
+  74  |             window.scrollTo(0, document.body.scrollHeight);
+  75  |             });
+  76  | 
+  77  |             await this.page.waitForTimeout(2000);
+  78  | 
+  79  |             const pageCurrentHeight = await this.page.evaluate(() => document.body.scrollHeight);
+  80  | 
+  81  |             if (prevHeight === pageCurrentHeight) {
+  82  |                 throw new Error("Beneficiary 'Amit Verma' not found");
+  83  |             }
+  84  | 
+  85  |             prevHeight = pageCurrentHeight;
+  86  |         }
+  87  |     }
+  88  |     async enteramounttranfer():Promise<any>{
+  89  |         await this.enterAmount.click()
+  90  |         await this.enterAmount.fill('100')
+  91  |         await this.page.waitForTimeout(2000)
+  92  |        const enteredamount= await this.enterAmount.getAttribute('placeholder')
+  93  |         // console.log(await this.enterAmount.getAttribute('value'))
+  94  |         await this.continuebtn.click();
+  95  |         const pagecontent=await this.reviewPage.textContent()
+> 96  |         const reviewdetailstype=await this.transferType.innerText();
+      |                                                         ^ Error: locator.innerText: Target page, context or browser has been closed
+  97  |         const reviewdetailsfromAcc=await this.fromAccountNum.innerText();
+  98  |         const reviewdetailsToAcc=await this.toAccountNum.textContent()
+  99  |         const reviwedetailsAmount=await this.cnfamount.textContent();
+  100 |         console.log(reviewdetailstype)
+  101 |         console.log(reviewdetailsfromAcc)
+  102 |         console.log(reviewdetailsToAcc)
+  103 |         console.log(reviwedetailsAmount)
+  104 |         return{
+  105 |             pagecontent,
+  106 |             enteredamount
+  107 |         } 
+  108 | 
+  109 |     }
+  110 | 
+  111 |     //async reviewFundTransferDetails():Promise<any>{
+  112 |       //  awa
+  113 |     //}
+  114 | }
+```
