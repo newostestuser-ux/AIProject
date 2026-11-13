@@ -56,11 +56,18 @@ pipeline {
     post {
         always {
             bat 'docker compose down --remove-orphans || exit /b 0'
+        
+            junit allowEmptyResults: true,
+            testResults: 'reports/results.xml'
+        
             archiveArtifacts(
                 artifacts: 'allure-results/**/*, allure-report/**/*, reports/**/*, custom-reports/**/*, test-results/**/*, traces/**/*',
                 allowEmptyArchive: true
             )
         }
+        
+       
+
 
         success {
             echo 'Playwright suite passed successfully.'
