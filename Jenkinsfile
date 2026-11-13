@@ -39,19 +39,12 @@ pipeline {
         }
 
         stage('Clean Reports') {
-            steps {
-                bat '''
-                if exist reports rmdir /s /q reports
-                if exist allure-results rmdir /s /q allure-results
-                if exist allure-report rmdir /s /q allure-report
-
-                mkdir reports
-                mkdir allure-results
-                mkdir allure-report
-                '''
-            }
-        }
-
+    steps {
+        bat '''
+        if exist allure-results ren allure-results allure-results-old
+        '''
+    }
+}
         stage('Run Playwright Tests') {
             steps {
                 bat 'docker compose up --abort-on-container-exit --exit-code-from playwright-tests'
