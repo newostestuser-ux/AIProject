@@ -35,7 +35,17 @@ pipeline {
                 bat 'docker compose build --no-cache'
             }
         }
+        stage('Clean Reports') {
+            steps {
+            bat '''
+            if exist reports rmdir /s /q reports
+            if exist allure-results rmdir /s /q allure-results
 
+            mkdir reports
+            mkdir allure-results
+            '''
+    }
+}
         stage('Run Playwright Tests') {
             steps {
                 bat 'docker compose up --abort-on-container-exit --exit-code-from playwright-tests'
