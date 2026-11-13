@@ -1,5 +1,5 @@
 # Match this version tag to your installed @playwright/test version (check via: npx playwright --version)
-FROM mcr.microsoft.com/playwright:focal
+FROM mcr.microsoft.com/playwright:v1.64.1-noble
 
 WORKDIR /app
 
