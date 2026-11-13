@@ -5,7 +5,7 @@ node_modules
 .gitignore
 
 # Environment & Windows-only scripts
-.env
+
 env_setup.bat
 
 # Non-test folders & local screenshots
