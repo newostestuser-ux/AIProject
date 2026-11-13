@@ -6,6 +6,7 @@ WORKDIR /app
 # Copy dependency manifests first to cache npm install
 COPY package.json package-lock.json ./
 RUN npm ci
+COPY .env .env
 
 # Copy TypeScript config, Playwright config, and source folders (api, fixtures, pages, testdata, tests, utils)
 COPY tsconfig.json playwright.config.ts ./
