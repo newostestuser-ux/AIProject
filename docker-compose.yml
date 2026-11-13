@@ -1,7 +1,6 @@
 services:
   playwright-tests:
     build: .
-    container_name: practice-playwright-runner
     init: true
     ipc: host
     env_file:
