@@ -1,0 +1,17 @@
+services:
+  playwright-tests:
+    build: .
+    container_name: practice-playwright-runner
+    init: true
+    ipc: host
+    env_file:
+      - .env
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/allure-report
+      - ./allure-reports:/app/allure-reports
+      - ./custom-reports:/app/custom-reports
+      - ./reports:/app/reports
+      - ./test-results:/app/test-results
+      - ./trace:/app/trace
+      - ./traces:/app/traces

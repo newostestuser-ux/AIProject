@@ -1,0 +1,37 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: api\fullApi.spec.ts >> booking api
+- Location: tests\api\fullApi.spec.ts:7:5
+
+# Error details
+
+```
+TypeError: Cannot read properties of undefined (reading 'readFileSync')
+```
+
+# Test source
+
+```ts
+  1  | import { fs } from 'fs'
+  2  | import{test,expect} from '../../fixtures/dbloginfixture'
+  3  | 
+  4  | 
+  5  | //create booking
+  6  | 
+  7  | test("booking api",async({request})=>{
+  8  | 
+  9  |     //requestbody
+  10 |     const jsonfile="../../testdata/testdata.json"
+> 11 |     const requestbody=JSON.parse(fs.readFileSync(jsonfile,'utf-8'))
+     |                                     ^ TypeError: Cannot read properties of undefined (reading 'readFileSync')
+  12 |     console.log(requestbody)
+  13 | 
+  14 | })
+  15 | 
+```

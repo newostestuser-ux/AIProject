@@ -1,0 +1,1 @@
+{"attachments":[],"errors":[{"message":"Capture trace on failure failed: TypeError: Cannot read properties of null (reading 'context')","trace":"TypeError: Cannot read properties of null (reading 'context')\n    at C:\\Users\\91963\\Desktop\\Shubha\\projects\\Practice_Project\\tests\\fundTransferPage.spec.ts:52:28","status":"broken","timestamp":1794502694520}]}

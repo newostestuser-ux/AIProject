@@ -1,0 +1,31 @@
+URL: https://www.nykaafashion.com/kids/c/6266?root=topnav_1
+[
+  'Gender',    'Category',
+  'Size',      'Brand',
+  'Price',     'Discount',
+  'Curations', 'Launched In',
+  'Material',  'Color',
+  'Occasion',  'Sleeve Type',
+  'Pattern',   'Pack Size',
+  'Neckline',  'Age',
+  'Closure'
+]
+{
+  Gender: [],
+  Category: [],
+  Size: [],
+  Brand: [],
+  Price: [],
+  Discount: [],
+  Curations: [],
+  'Launched In': [],
+  Material: [],
+  Color: [],
+  Occasion: [],
+  'Sleeve Type': [],
+  Pattern: [],
+  'Pack Size': [],
+  Neckline: [],
+  Age: [],
+  Closure: []
+}

@@ -14,7 +14,7 @@ test.beforeEach("Login to user", async ({ loggedInPage }) => {
 
 test.describe("Fund Transfer tests", () => {
 
-    test("@Regression Fund Transfer", async ({ loggedInPage }) => {
+    test("@sanity Fund Transfer", async ({ loggedInPage }) => {
 
         const fundSms = await fundTransferPage.selectFundTransfer();
         await expect(fundSms).toBe("Select Transfer Type");

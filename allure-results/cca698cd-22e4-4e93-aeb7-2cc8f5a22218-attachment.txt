@@ -1,0 +1,3 @@
+https://www.testerrank.com/banking/login
+[AsyncFunction: clickDashboardBillPayment]
+getByText('Pay Bills')

@@ -1,8 +1,16 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.556054">
-<testsuite name="fundTransferPage.spec.ts" timestamp="2026-11-04T09:16:45.757Z" hostname="chromium" tests="1" failures="0" skipped="0" time="13.3" errors="0">
-<testcase name="Fund Transfer tests › @Regression Fund Transfer" classname="fundTransferPage.spec.ts" time="13.3">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.003352000000001">
+<testsuite name="billPayment.spec.ts" timestamp="2026-11-13T11:18:33.922Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.922" errors="0">
+<testcase name="bill paymnent › bill paymnet using" classname="billPayment.spec.ts" time="6.922">
 <system-out>
 <![CDATA[https://www.testerrank.com/banking/login
+getByText('Bill Payments')
+getByText('Pay Bills')
+Electricity
+Water
+Mobile/Telecom
+Gas
+Internet/Broadband
+Insurance
 ]]>
 </system-out>
 </testcase>

@@ -1,0 +1,9 @@
+https://www.testerrank.com/banking/login
+getByText('Bill Payments')
+getByText('Pay Bills')
+Electricity
+Water
+Mobile/Telecom
+Gas
+Internet/Broadband
+Insurance

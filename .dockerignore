@@ -1,0 +1,23 @@
+# Local dependencies & version control
+node_modules
+.git
+.github
+.gitignore
+
+# Environment & Windows-only scripts
+.env
+env_setup.bat
+
+# Non-test folders & local screenshots
+prompts
+otp-login-result.png
+
+# Generated reports & traces (mounted dynamically via docker-compose)
+allure-report
+allure-reports
+allure-results
+custom-reports
+reports
+test-results
+trace
+traces

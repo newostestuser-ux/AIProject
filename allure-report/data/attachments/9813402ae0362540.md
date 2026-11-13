@@ -1,0 +1,342 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: accountstatementPage.spec.ts >> Account Statement tests >> @Regression Account Statement
+- Location: tests\accountstatementPage.spec.ts:18:9
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "₹2,49,998.92"
+Received: "₹2,50,000"
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e3]:
+    - complementary "QA Automation Sandbox Banner" [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "TesterRank" [ref=e7] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e10]: "|"
+          - generic [ref=e11]: QA Sandbox
+          - generic [ref=e12]: ISB NetBanking Demo Portal
+          - generic [ref=e13]: — Interactive sandbox for Selenium, Playwright & API automation practice
+        - navigation "Sandbox quick navigation" [ref=e14]:
+          - link "📋 Test Cases" [ref=e15] [cursor=pointer]:
+            - /url: /practice/banking/test-cases
+            - text: 📋
+            - generic [ref=e16]: Test Cases
+          - link "🚀 Automation Exercises" [ref=e17] [cursor=pointer]:
+            - /url: /practice/banking/exercises
+            - text: 🚀
+            - generic [ref=e18]: Automation Exercises
+          - link "All Portals" [ref=e19] [cursor=pointer]:
+            - /url: /practice
+          - link "← Exit Sandbox" [ref=e20] [cursor=pointer]:
+            - /url: /
+    - generic [ref=e21]:
+      - complementary [ref=e22]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: ISB
+          - generic [ref=e26]: NetBanking
+        - generic [ref=e28]:
+          - generic [ref=e29]: RS
+          - generic [ref=e30]:
+            - generic [ref=e31]: Rahul Sharma
+            - generic [ref=e32]: "A/C: ****7890"
+        - navigation [ref=e33]:
+          - link "Dashboard" [ref=e34] [cursor=pointer]:
+            - /url: /banking/dashboard
+          - link "Notifications" [ref=e38] [cursor=pointer]:
+            - /url: /banking/notifications
+          - link "Accounts" [ref=e42] [cursor=pointer]:
+            - /url: /banking/dashboard
+          - link "Fund Transfer" [ref=e46] [cursor=pointer]:
+            - /url: /banking/transfer
+          - link "Transactions" [ref=e50] [cursor=pointer]:
+            - /url: /banking/transactions
+          - link "Beneficiaries" [ref=e54] [cursor=pointer]:
+            - /url: /banking/beneficiary
+          - link "Bill Payments" [ref=e58] [cursor=pointer]:
+            - /url: /banking/bill-payments
+          - link "Fixed Deposits" [ref=e62] [cursor=pointer]:
+            - /url: /banking/fixed-deposit
+          - link "Loan Calculator" [ref=e66] [cursor=pointer]:
+            - /url: /banking/loan-calculator
+          - link "Cards" [ref=e70] [cursor=pointer]:
+            - /url: /banking/cards
+          - link "Profile & Settings" [ref=e74] [cursor=pointer]:
+            - /url: /banking/profile
+        - button "Logout" [ref=e80] [cursor=pointer]
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - heading "Welcome, Rahul" [level=1] [ref=e87]
+          - generic [ref=e88]:
+            - link "3" [ref=e89] [cursor=pointer]:
+              - /url: /banking/notifications
+            - generic [ref=e93]: Thu, 12 Nov, 2026
+            - generic [ref=e94]: RS
+        - main [ref=e95]:
+          - generic [ref=e96]:
+            - heading "Account Statement" [level=2] [ref=e97]
+            - paragraph [ref=e98]: "Account: XXXX XXXX 7890 (Savings Account) | View and filter your past transactions"
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - generic [ref=e102]: Date From
+                - textbox "Date From" [ref=e103]
+              - generic [ref=e104]:
+                - generic [ref=e105]: Date To
+                - textbox "Date To" [ref=e106]
+              - generic [ref=e107]:
+                - generic [ref=e108]: Type
+                - combobox "Type" [ref=e109]:
+                  - option "All" [selected]
+                  - option "Credit"
+                  - option "Debit"
+              - generic [ref=e110]:
+                - generic [ref=e111]: Status
+                - combobox "Status" [ref=e112]:
+                  - option "All" [selected]
+                  - option "Success"
+                  - option "Pending"
+                  - option "Failed"
+              - generic [ref=e113]:
+                - generic [ref=e114]: Search
+                - textbox "Search" [ref=e115]:
+                  - /placeholder: Description or Ref No.
+              - generic [ref=e116]:
+                - button "Apply Filters" [ref=e117] [cursor=pointer]
+                - button "Clear" [ref=e118] [cursor=pointer]
+            - table [ref=e121]:
+              - rowgroup [ref=e122]:
+                - row [ref=e123]:
+                  - columnheader "Date" [ref=e124]
+                  - columnheader "Description" [ref=e125]
+                  - columnheader "Reference" [ref=e126]
+                  - columnheader "Type" [ref=e127]
+                  - columnheader "Amount" [ref=e128]
+                  - columnheader "Balance" [ref=e129]
+                  - columnheader "Status" [ref=e130]
+              - rowgroup [ref=e131]:
+                - row [ref=e132]:
+                  - cell "22-Apr-2026" [ref=e133]
+                  - cell "NEFT to Rajesh Kumar - Rent" [ref=e134]
+                  - cell "TXN001" [ref=e135]
+                  - cell "debit" [ref=e136]
+                  - cell "-₹25,000" [ref=e137]
+                  - cell "2,50,000.00" [ref=e138]
+                  - cell "Success" [ref=e139]
+                - row [ref=e141]:
+                  - cell "20-Apr-2026" [ref=e142]
+                  - cell "Salary Credit - GlobalTech Pvt Ltd" [ref=e143]
+                  - cell "TXN002" [ref=e144]
+                  - cell "credit" [ref=e145]
+                  - cell "+₹75,000" [ref=e146]
+                  - cell "2,75,000.00" [ref=e147]
+                  - cell "Success" [ref=e148]
+                - row [ref=e150]:
+                  - cell "18-Apr-2026" [ref=e151]
+                  - cell "IMPS to Priya Sharma" [ref=e152]
+                  - cell "TXN003" [ref=e153]
+                  - cell "debit" [ref=e154]
+                  - cell "-₹3,500" [ref=e155]
+                  - cell "2,00,000.00" [ref=e156]
+                  - cell "Success" [ref=e157]
+                - row [ref=e159]:
+                  - cell "15-Apr-2026" [ref=e160]
+                  - cell "UPI Credit from Amit Verma" [ref=e161]
+                  - cell "TXN004" [ref=e162]
+                  - cell "credit" [ref=e163]
+                  - cell "+₹12,000" [ref=e164]
+                  - cell "2,03,500.00" [ref=e165]
+                  - cell "Success" [ref=e166]
+                - row [ref=e168]:
+                  - cell "12-Apr-2026" [ref=e169]
+                  - cell "Electricity Bill - MSEDCL" [ref=e170]
+                  - cell "TXN005" [ref=e171]
+                  - cell "debit" [ref=e172]
+                  - cell "-₹2,340" [ref=e173]
+                  - cell "1,91,500.00" [ref=e174]
+                  - cell "Success" [ref=e175]
+            - generic [ref=e177]:
+              - generic [ref=e178]: Showing 1-5 of 5 transactions
+              - generic [ref=e179]:
+                - button "Prev" [disabled] [ref=e180]
+                - button "1" [ref=e181] [cursor=pointer]
+                - button "Next" [disabled] [ref=e182]
+            - generic [ref=e183]:
+              - generic [ref=e184]: Download Statement
+              - button "PDF" [ref=e185] [cursor=pointer]
+              - button "CSV" [ref=e186] [cursor=pointer]
+              - button "XLS" [ref=e187] [cursor=pointer]
+  - contentinfo [ref=e188]:
+    - generic [ref=e189]:
+      - generic [ref=e190]:
+        - generic [ref=e191]:
+          - heading "Learn" [level=3] [ref=e192]
+          - list [ref=e193]:
+            - listitem [ref=e194]:
+              - link "Selenium Tutorial" [ref=e195] [cursor=pointer]:
+                - /url: /selenium-tutorial
+            - listitem [ref=e196]:
+              - link "Playwright Tutorial" [ref=e197] [cursor=pointer]:
+                - /url: /playwright-tutorial
+            - listitem [ref=e198]:
+              - link "API Testing Guide" [ref=e199] [cursor=pointer]:
+                - /url: /api-testing-guide
+            - listitem [ref=e200]:
+              - link "45-Day Plan" [ref=e201] [cursor=pointer]:
+                - /url: /study-plan
+            - listitem [ref=e202]:
+              - link "QA Career Roadmap" [ref=e203] [cursor=pointer]:
+                - /url: /career
+            - listitem [ref=e204]:
+              - link "Java" [ref=e205] [cursor=pointer]:
+                - /url: /paths/java
+            - listitem [ref=e206]:
+              - link "Selenium" [ref=e207] [cursor=pointer]:
+                - /url: /paths/selenium
+            - listitem [ref=e208]:
+              - link "TestNG" [ref=e209] [cursor=pointer]:
+                - /url: /paths/testng
+            - listitem [ref=e210]:
+              - link "API Testing" [ref=e211] [cursor=pointer]:
+                - /url: /paths/api-testing
+            - listitem [ref=e212]:
+              - link "Playwright" [ref=e213] [cursor=pointer]:
+                - /url: /paths/playwright
+            - listitem [ref=e214]:
+              - link "Database & SQL" [ref=e215] [cursor=pointer]:
+                - /url: /paths/database
+        - generic [ref=e216]:
+          - heading "Practice" [level=3] [ref=e217]
+          - list [ref=e218]:
+            - listitem [ref=e219]:
+              - link "All 10 Practice Apps" [ref=e220] [cursor=pointer]:
+                - /url: /practice
+            - listitem [ref=e221]:
+              - link "Banking Portal" [ref=e222] [cursor=pointer]:
+                - /url: /banking
+            - listitem [ref=e223]:
+              - link "Shopping Store" [ref=e224] [cursor=pointer]:
+                - /url: /shopping
+            - listitem [ref=e225]:
+              - link "Insurance Portal" [ref=e226] [cursor=pointer]:
+                - /url: /insurance
+            - listitem [ref=e227]:
+              - link "Bug Tracker" [ref=e228] [cursor=pointer]:
+                - /url: /defect-tracker
+            - listitem [ref=e229]:
+              - link "22 Practice Topics" [ref=e230] [cursor=pointer]:
+                - /url: /topics
+            - listitem [ref=e231]:
+              - link "Skill Assessments" [ref=e232] [cursor=pointer]:
+                - /url: /assessment
+        - generic [ref=e233]:
+          - heading "Prepare" [level=3] [ref=e234]
+          - list [ref=e235]:
+            - listitem [ref=e236]:
+              - link "Selenium Interview Q&A" [ref=e237] [cursor=pointer]:
+                - /url: /selenium-interview-questions
+            - listitem [ref=e238]:
+              - link "API Testing Q&A" [ref=e239] [cursor=pointer]:
+                - /url: /api-testing-questions
+            - listitem [ref=e240]:
+              - link "Playwright Practice Test" [ref=e241] [cursor=pointer]:
+                - /url: /playwright-practice-test
+            - listitem [ref=e242]:
+              - link "Manual QA Scenarios" [ref=e243] [cursor=pointer]:
+                - /url: /manual-testing-quiz
+            - listitem [ref=e244]:
+              - link "1600+ Real Questions" [ref=e245] [cursor=pointer]:
+                - /url: /interview-questions
+            - listitem [ref=e246]:
+              - link "QA Cheatsheets Hub" [ref=e247] [cursor=pointer]:
+                - /url: /cheatsheet
+            - listitem [ref=e248]:
+              - link "XPath Cheatsheet" [ref=e249] [cursor=pointer]:
+                - /url: /xpath-cheatsheet
+            - listitem [ref=e250]:
+              - link "Locator Cheatsheet" [ref=e251] [cursor=pointer]:
+                - /url: /cheatsheet/locators
+        - generic [ref=e252]:
+          - heading "Company" [level=3] [ref=e253]
+          - list [ref=e254]:
+            - listitem [ref=e255]:
+              - link "About & Quality" [ref=e256] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e257]:
+              - link "Contact Us" [ref=e258] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e259]:
+              - link "Privacy Policy" [ref=e260] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e261]:
+              - link "Terms of Service" [ref=e262] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e263]:
+              - link "Sandbox Disclaimer" [ref=e264] [cursor=pointer]:
+                - /url: /disclaimer
+            - listitem [ref=e265]:
+              - link "Practice API Docs" [ref=e266] [cursor=pointer]:
+                - /url: /api-docs
+      - generic [ref=e267]:
+        - generic [ref=e268]: TesterRank
+        - generic [ref=e269]: © 2026 TesterRank. Free QA learning platform.
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e270]: Banking Portal | TesterRank
+```
+
+# Test source
+
+```ts
+  1  | import {test,expect}from "../fixtures/loginfixture"
+  2  | import { AccountStatement} from "../pages/accountStatmentPage"
+  3  | 
+  4  | let accstatament:AccountStatement;
+  5  | 
+  6  | test.beforeEach("acc stat",async({loggedInPage})=>{
+  7  |     //await expect(loggedInPage).toHaveURL(/login/i)
+  8  |     accstatament=new AccountStatement(loggedInPage)
+  9  |     await loggedInPage.context().tracing.start({
+  10 |         screenshots:true,
+  11 |         snapshots:true,
+  12 |         sources:true
+  13 |     })
+  14 | })
+  15 | 
+  16 | test.describe("Account Statement tests",()=>{
+  17 | 
+  18 |     test("@Regression Account Statement",async({loggedInPage})=>{
+  19 | 
+  20 |         const accountDetails=await accstatament.getAccountDetails()  
+> 21 |         await expect(accountDetails.balan).toBe("₹2,49,998.92")
+     |                                            ^ Error: expect(received).toBe(expected) // Object.is equality
+  22 |         await expect(accountDetails.accNo).toBe("XXXX XXXX 7890")
+  23 |         await expect(accountDetails.succpage).toBe("Account Statement")
+  24 |     
+  25 |         
+  26 |     })
+  27 | })
+  28 | 
+  29 | 
+  30 | test.afterEach("Capture trace on failure",async({loggedInPage},testInfo)=>{
+  31 |     if (testInfo.status === "failed") {
+  32 |         await loggedInPage.context().tracing.stop({ path: `traces/${testInfo.title}.zip` });
+  33 |     }
+  34 | })
+```

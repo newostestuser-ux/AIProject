@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","33788","Nykaa Filter Options","chromium","2026-11-03","broken","2026-11-03","","nykaaFilterPage.spec.ts","",""
+"","8725","login to acc","chromium","2026-10-30","passed","2026-10-30","","login.spec.ts","",""
+"","10819","fund transfer","chromium","2026-11-02","passed","2026-11-02","","fundTransferPage.spec.ts","",""
+"","8908","new user registration","chromium","2026-10-30","passed","2026-10-30","","regstrationPage.spec.ts","",""
+"","10061","@Regression Account Statement","chromium","2026-11-12","passed","2026-11-12","Account Statement tests","accountstatementPage.spec.ts","",""
+"","15625","@Regression Fund Transfer","chromium","2026-11-12","passed","2026-11-12","Fund Transfer tests","fundTransferPage.spec.ts","",""

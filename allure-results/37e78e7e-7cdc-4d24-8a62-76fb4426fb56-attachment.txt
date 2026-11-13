@@ -1,0 +1,48 @@
+https://www.testerrank.com/banking/login
+[
+  [
+    '22-Apr-2026',
+    'NEFT to Rajesh Kumar - Rent',
+    'TXN001',
+    'debit',
+    '-₹25,000',
+    '2,50,000.00',
+    'Success'
+  ],
+  [
+    '20-Apr-2026',
+    'Salary Credit - GlobalTech Pvt Ltd',
+    'TXN002',
+    'credit',
+    '+₹75,000',
+    '2,75,000.00',
+    'Success'
+  ],
+  [
+    '18-Apr-2026',
+    'IMPS to Priya Sharma',
+    'TXN003',
+    'debit',
+    '-₹3,500',
+    '2,00,000.00',
+    'Success'
+  ],
+  [
+    '15-Apr-2026',
+    'UPI Credit from Amit Verma',
+    'TXN004',
+    'credit',
+    '+₹12,000',
+    '2,03,500.00',
+    'Success'
+  ],
+  [
+    '12-Apr-2026',
+    'Electricity Bill - MSEDCL',
+    'TXN005',
+    'debit',
+    '-₹2,340',
+    '1,91,500.00',
+    'Success'
+  ]
+]

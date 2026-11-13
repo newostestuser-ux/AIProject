@@ -1,0 +1,9 @@
+https://www.testerrank.com/banking/login
+getByText('Bill Payments')
+getByText('Pay Bills')
+[AsyncFunction: innerText]
+[AsyncFunction: innerText]
+[AsyncFunction: innerText]
+[AsyncFunction: innerText]
+[AsyncFunction: innerText]
+[AsyncFunction: innerText]
