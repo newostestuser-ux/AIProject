@@ -12,6 +12,7 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -24,6 +25,7 @@ pipeline {
                 bat 'docker compose version'
             }
         }
+
         stage('Create Env File') {
             steps {
                 bat 'copy .env.example .env'
@@ -35,17 +37,21 @@ pipeline {
                 bat 'docker compose build --no-cache'
             }
         }
+
         stage('Clean Reports') {
             steps {
-            bat '''
-            if exist reports rmdir /s /q reports
-            if exist allure-results rmdir /s /q allure-results
+                bat '''
+                if exist reports rmdir /s /q reports
+                if exist allure-results rmdir /s /q allure-results
+                if exist allure-report rmdir /s /q allure-report
 
-            mkdir reports
-            mkdir allure-results
-            '''
-    }
-}
+                mkdir reports
+                mkdir allure-results
+                mkdir allure-report
+                '''
+            }
+        }
+
         stage('Run Playwright Tests') {
             steps {
                 bat 'docker compose up --abort-on-container-exit --exit-code-from playwright-tests'
@@ -54,27 +60,36 @@ pipeline {
     }
 
     post {
+
         always {
-            bat 'docker compose down --remove-orphans || exit /b 0'
-        
-            junit allowEmptyResults: true,
-            testResults: 'reports/results.xml'
-        
+
+            junit(
+                testResults: 'reports/results.xml',
+                allowEmptyResults: true
+            )
+
             archiveArtifacts(
-                artifacts: 'allure-results/**/*, allure-report/**/*, reports/**/*, custom-reports/**/*, test-results/**/*, traces/**/*',
+                artifacts: '''
+                    allure-results/**/*,
+                    allure-report/**/*,
+                    reports/**/*,
+                    custom-reports/**/*,
+                    test-results/**/*,
+                    traces/**/*,
+                    trace/**/*
+                ''',
                 allowEmptyArchive: true
             )
-        }
-        
-       
 
+            bat 'docker compose down --remove-orphans || exit /b 0'
+        }
 
         success {
-            echo 'Playwright suite passed successfully.'
+            echo '✅ Playwright suite passed successfully.'
         }
 
         failure {
-            echo 'Playwright suite failed. Check the logs and generated artifacts.'
+            echo '❌ Playwright suite failed. Check Test Results and archived artifacts.'
         }
     }
 }
