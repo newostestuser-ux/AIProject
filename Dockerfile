@@ -16,5 +16,14 @@ COPY testdata ./testdata
 COPY tests ./tests
 COPY utils ./utils
 
+RUN mkdir -p /app/reports \
+    /app/allure-results \
+    /app/allure-reports \
+    /app/test-results
+
+RUN chmod -R 777 /app/reports \
+    /app/allure-results \
+    /app/allure-reports \
+    /app/test-results
 # Run Playwright tests by default
 CMD ["npx", "playwright", "test"]
