@@ -6,6 +6,7 @@ services:
     ipc: host
     env_file:
       - .env
+    command: sh -c "cat .env && npx playwright test"
     volumes:
       - ./allure-results:/app/allure-results
       - ./allure-report:/app/allure-report
