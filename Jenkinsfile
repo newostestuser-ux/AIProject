@@ -24,6 +24,11 @@ pipeline {
                 bat 'docker compose version'
             }
         }
+        stage('Create Env File') {
+            steps {
+                bat 'copy .env.example .env'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
