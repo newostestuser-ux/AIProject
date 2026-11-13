@@ -2,6 +2,7 @@ services:
   playwright-tests:
     build: .
     init: true
+    user: root
     ipc: host
     env_file:
       - .env
