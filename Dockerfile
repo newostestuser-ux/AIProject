@@ -9,7 +9,6 @@ RUN npm ci
 
 # Copy TypeScript config, Playwright config, and source folders (api, fixtures, pages, testdata, tests, utils)
 COPY tsconfig.json playwright.config.ts ./
-COPY api ./api
 COPY fixtures ./fixtures
 COPY pages ./pages
 
