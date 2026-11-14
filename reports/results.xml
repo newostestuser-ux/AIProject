@@ -1,18 +1,222 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.003352000000001">
-<testsuite name="billPayment.spec.ts" timestamp="2026-11-13T11:18:33.922Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.922" errors="0">
-<testcase name="bill paymnent › bill paymnet using" classname="billPayment.spec.ts" time="6.922">
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="8" time="17.632275999999997">
+<testsuite name="accountstatementPage.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.021" errors="1">
+<testcase name="Account Statement tests › @Regression Account Statement" classname="accountstatementPage.spec.ts" time="0.021">
 <system-out>
-<![CDATA[https://www.testerrank.com/banking/login
-getByText('Bill Payments')
-getByText('Pay Bills')
-Electricity
-Water
-Mobile/Telecom
-Gas
-Internet/Broadband
-Insurance
+<![CDATA[
+[[ATTACHMENT|../test-results/accountstatementPage-Accou-133c1-egression-Account-Statement-chromium/error-context.md]]
 ]]>
 </system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › accountstatementPage.spec.ts:18:5 › Account Statement tests › @Regression Account Statement 
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/accountstatementPage-Accou-133c1-egression-Account-Statement-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="accountTransactionPage.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.058" errors="1">
+<testcase name="Account Transaction tests ›  Account Transaction" classname="accountTransactionPage.spec.ts" time="0.058">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/accountTransactionPage-Acc-f1de6-n-tests-Account-Transaction-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › accountTransactionPage.spec.ts:17:5 › Account Transaction tests ›  Account Transaction 
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/accountTransactionPage-Acc-f1de6-n-tests-Account-Transaction-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="api/fullApi.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.557" errors="0">
+<testcase name="booking api › booking api post req" classname="api/fullApi.spec.ts" time="2.557">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[[33m1130[39m
+{
+  firstname: [32m'Jim'[39m,
+  lastname: [32m'Brown'[39m,
+  totalprice: [33m222[39m,
+  depositpaid: [33mtrue[39m,
+  bookingdates: { checkin: [32m'2018-01-01'[39m, checkout: [32m'2019-01-02'[39m },
+  additionalneeds: [32m'Breakfast'[39m
+}
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="billPayment.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.049" errors="1">
+<testcase name="bill paymnent › bill paymnet using" classname="billPayment.spec.ts" time="0.049">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/billPayment-bill-paymnent-bill-paymnet-using-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › billPayment.spec.ts:18:5 › bill paymnent › bill paymnet using ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/billPayment-bill-paymnent-bill-paymnet-using-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="downloadTransaction.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.029" errors="1">
+<testcase name="download › download transaction @sanity" classname="downloadTransaction.spec.ts" time="0.029">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/downloadTransaction-download-download-transaction-sanity-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › downloadTransaction.spec.ts:17:5 › download › download transaction @sanity ──────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/downloadTransaction-download-download-transaction-sanity-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="fundTransferPage.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.052" errors="1">
+<testcase name="Fund Transfer tests › @sanity Fund Transfer" classname="fundTransferPage.spec.ts" time="0.052">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/fundTransferPage-Fund-Transfer-tests-sanity-Fund-Transfer-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › fundTransferPage.spec.ts:17:5 › Fund Transfer tests › @sanity Fund Transfer ─────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/fundTransferPage-Fund-Transfer-tests-sanity-Fund-Transfer-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.048" errors="1">
+<testcase name="login to acc" classname="login.spec.ts" time="0.048">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/login-login-to-acc-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › login.spec.ts:3:1 › login to acc ────────────────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/login-login-to-acc-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="nykaaFilterPage.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.042" errors="1">
+<testcase name="Nykaa Filter Options" classname="nykaaFilterPage.spec.ts" time="0.042">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/nykaaFilterPage-Nykaa-Filter-Options-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › nykaaFilterPage.spec.ts:13:1 › Nykaa Filter Options ─────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/nykaaFilterPage-Nykaa-Filter-Options-chromium/error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="regstrationPage.spec.ts" timestamp="2026-11-13T16:32:36.831Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.02" errors="1">
+<testcase name="new user registration" classname="regstrationPage.spec.ts" time="0.02">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/regstrationPage-new-user-registration-chromium/error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at /ms-playwright/chromium-1248/chrome-linux64/chrome" type="Error">
+<![CDATA[  [chromium] › regstrationPage.spec.ts:18:1 › new user registration ────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /ms-playwright/chromium-1248/chrome-linux64/chrome
+    ╔════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just updated to 1.64.1.      ║
+    ║ Please update docker image as well.                    ║
+    ║ -  current: mcr.microsoft.com/playwright:v1.46.1-focal ║
+    ║ - required: mcr.microsoft.com/playwright:v1.64.1-focal ║
+    ║                                                        ║
+    ║ <3 Playwright Team                                     ║
+    ╚════════════════════════════════════════════════════════╝
+
+    Error Context: ../test-results/regstrationPage-new-user-registration-chromium/error-context.md
+]]>
+</error>
 </testcase>
 </testsuite>
 </testsuites>

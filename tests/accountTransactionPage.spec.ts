@@ -5,11 +5,11 @@ let transactionPage:TransactionPage
 
 test.beforeEach("",async({loggedInPage})=>{
     transactionPage=await new TransactionPage(loggedInPage);
-    await loggedInPage.context().tracing.start({
-        screenshots:true,
-        snapshots:true,
-        sources:true
-    })
+    // await loggedInPage.context().tracing.start({
+    //     screenshots:true,
+    //     snapshots:true,
+    //     sources:true
+    // })
 })
 
 test.describe("Account Transaction tests",()=>{
@@ -21,8 +21,8 @@ test.describe("Account Transaction tests",()=>{
     })
 })
 
-test.afterEach("Capture trace on failure",async({loggedInPage},testInfo)=>{
-    if (testInfo.status === "failed") {
-        await loggedInPage.context().tracing.stop({ path: `traces/${testInfo.title}.zip` });
-    }                       
+test.afterEach("Capture trace on failure",async({loggedInPage})=>{
+    // if (testInfo.status === "failed") {
+    //     await loggedInPage.context().tracing.stop({ path: `traces/${testInfo.title}.zip` });
+    // }                       
 })

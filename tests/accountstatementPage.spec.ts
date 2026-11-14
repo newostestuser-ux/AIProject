@@ -6,11 +6,11 @@ let accstatament:AccountStatement;
 test.beforeEach("acc stat",async({loggedInPage})=>{
     //await expect(loggedInPage).toHaveURL(/login/i)
     accstatament=new AccountStatement(loggedInPage)
-    await loggedInPage.context().tracing.start({
-        screenshots:true,
-        snapshots:true,
-        sources:true
-    })
+    // await loggedInPage.context().tracing.start({
+    //     screenshots:true,
+    //     snapshots:true,
+    //     sources:true
+    // })
 })
 
 test.describe("Account Statement tests",()=>{
@@ -27,8 +27,8 @@ test.describe("Account Statement tests",()=>{
 })
 
 
-test.afterEach("Capture trace on failure",async({loggedInPage},testInfo)=>{
-    if (testInfo.status === "failed") {
-        await loggedInPage.context().tracing.stop({ path: `traces/${testInfo.title}.zip` });
-    }
+test.afterEach("Capture trace on failure",async({loggedInPage})=>{
+    // if (testInfo.status === "failed") {
+    //     await loggedInPage.context().tracing.stop({ path: `traces/${testInfo.title}.zip` });
+    // }
 })

@@ -5,11 +5,11 @@ let fundTransferPage: FundTransferPage;
 test.beforeEach("Login to user", async ({ loggedInPage }) => {
     await expect(loggedInPage).not.toHaveURL(/login/i);
     fundTransferPage = new FundTransferPage(loggedInPage);
-    await loggedInPage.context().tracing.start({
-        screenshots: true,
-        snapshots: true,
-        sources: true
-    });
+    // await loggedInPage.context().tracing.start({
+    //     screenshots: true,
+    //     snapshots: true,
+    //     sources: true
+    // });
 });
 
 test.describe("Fund Transfer tests", () => {
@@ -43,22 +43,22 @@ test.describe("Fund Transfer tests", () => {
 
 });
 
-test.afterEach("Capture trace on failure",async ({ loggedInPage }, testInfo) => {
+test.afterEach("Capture trace on failure",async ({ loggedInPage }) => {
 
-    const tracePath = `traces/trace-${Date.now()}.zip`;
+//     const tracePath = `traces/trace-${Date.now()}.zip`;
 
-    if (testInfo.status !== testInfo.expectedStatus) {
+//     if (testInfo.status !== testInfo.expectedStatus) {
 
-        await loggedInPage.context().tracing.stop({
-        path: tracePath
-    });
+//         await loggedInPage.context().tracing.stop({
+//         path: tracePath
+//     });
 
-        await testInfo.attach("Trace", {
-        path: tracePath,
-        contentType: "application/zip"
-    });
+//         await testInfo.attach("Trace", {
+//         path: tracePath,
+//         contentType: "application/zip"
+//     });
 
-    } else {
-await loggedInPage.context().tracing.stop();
-    }
+//     } else {
+// await loggedInPage.context().tracing.stop();
+//     }
 });

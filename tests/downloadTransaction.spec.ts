@@ -3,14 +3,14 @@ import { DownloadTarnsactions } from "../pages/downloadTranscationHistorypage"
 
 let downloadfile:DownloadTarnsactions
 
-test.beforeEach("file download",async({loggedInPage},testInfo)=>{
+test.beforeEach("file download",async({loggedInPage})=>{
 
     downloadfile=await new DownloadTarnsactions(loggedInPage);
-    await loggedInPage.context().tracing.start({
-        screenshots:true,
-        snapshots:true,
-        sources:true
-    })
+    // await loggedInPage.context().tracing.start({
+    //     screenshots:true,
+    //     snapshots:true,
+    //     sources:true
+    // })
 })
 
 test.describe("download",async()=>{
@@ -20,18 +20,18 @@ test.describe("download",async()=>{
     })
 })
 
-test.afterEach("stop dwonload",async({loggedInPage},testInfo)=>{
-    const tracefile=`traces/trace-/${Date.now()}.zip`
-    if(testInfo.status!=testInfo.expectedStatus){
-         await loggedInPage.context().tracing.stop({
-            path:tracefile
-        })
-        await testInfo.attach("traces",{
-            path:tracefile,
-            contentType: "application/zip"
+test.afterEach("stop dwonload",async({loggedInPage})=>{
+    // const tracefile=`traces/trace-/${Date.now()}.zip`
+    // if(testInfo.status!=testInfo.expectedStatus){
+    //      await loggedInPage.context().tracing.stop({
+    //         path:tracefile
+    //     })
+    //     await testInfo.attach("traces",{
+    //         path:tracefile,
+    //         contentType: "application/zip"
         
-        })
-    }else{
-        await loggedInPage.context().tracing.stop()
-    }
+    //     })
+    // }else{
+    //     await loggedInPage.context().tracing.stop()
+    // }
 })
