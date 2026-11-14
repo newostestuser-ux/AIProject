@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        sstage('Clean Reports') {
+    stage('Clean Reports') {
     steps {
         deleteDir()
     }
