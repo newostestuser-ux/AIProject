@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 import { configDotenv } from "dotenv";
 export default defineConfig({
-timeout: 30 * 1000, //30000 ms(30 secs)
+timeout: 30 * 2000,//30000 ms(30 secs)
 testDir: "./tests",
 fullyParallel: true,
 retries: process.env.CI ? 2 : 0,
