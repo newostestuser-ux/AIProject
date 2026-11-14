@@ -41,7 +41,8 @@ pipeline {
         stage('Clean Reports') {
     steps {
         bat '''
-        if exist allure-results ren allure-results allure-results-old
+        if exist allure-report rmdir /s /q allure-report
+        if exist reports rmdir /s /q reports
         '''
     }
 }
