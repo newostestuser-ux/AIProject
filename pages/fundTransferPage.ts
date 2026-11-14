@@ -72,6 +72,7 @@ export class FundTransferPage{
             for (let i = 0; i < await this.listOfBeneficiary.count(); i++) {
                 if ((await this.listOfBeneficiary.nth(i).innerText()).includes("Amit Verma")) {
                     await this.listOfBeneficiary.nth(i).click();
+                     await this.continuebtn.isVisible()
                     await this.continuebtn.click();
 
                     return await this.nextPageBtn.innerText();
@@ -98,6 +99,7 @@ export class FundTransferPage{
         await this.enterAmount.fill('100')
         await this.page.waitForTimeout(2000)
         const enteredamount= await this.enterAmount.inputValue()
+        await this.continuebtn.isVisible()
         await this.continuebtn.click();
         const pagecontent=await this.reviewPage.innerText()
         const reviewdetailstype=await this.transferType.innerText();
