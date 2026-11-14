@@ -38,12 +38,9 @@ pipeline {
             }
         }
 
-        stage('Clean Reports') {
+        sstage('Clean Reports') {
     steps {
-        bat '''
-        if exist allure-report rmdir /s /q allure-report
-        if exist reports rmdir /s /q reports
-        '''
+        deleteDir()
     }
 }
         stage('Run Playwright Tests') {
