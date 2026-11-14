@@ -31,7 +31,8 @@ pipeline {
             withCredentials([
             string(credentialsId: 'WEB_DB_URL', variable: 'WEB_DB_URL'),
             string(credentialsId: 'WEB_APP_URL', variable: 'WEB_APP_URL'),
-            string(credentialsId: 'WEB_APP_REG_URL', variable: 'WEB_APP_REG_URL')
+            string(credentialsId: 'WEB_APP_REG_URL', variable: 'WEB_APP_REG_URL'),
+            string(credentialsId: 'WEB_APP_NYKAA_URL', variable: 'WEB_APP_NYKAA_URL')
             ]) {
         
             bat '''
@@ -40,6 +41,7 @@ pipeline {
                 echo WEB_DB_URL=%WEB_DB_URL%
                 echo WEB_APP_URL=%WEB_APP_URL%
                 echo WEB_APP_REG_URL=%WEB_APP_REG_URL%
+                echo WEB_APP_NYKAA_URL=%WEB_APP_NYKAA_URL%
                 ) > .env
                 '''
         }
@@ -83,7 +85,14 @@ pipeline {
     post {
     
     always {
-        
+        bat '''
+            echo ===== REPORTS XML =====
+            if exist reports (
+            dir reports /s
+            ) else (
+                echo reports folder not found
+        )
+        '''
         junit(
         testResults: 'reports/results.xml',
         allowEmptyResults: true
