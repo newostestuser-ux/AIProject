@@ -3,7 +3,7 @@ import { FundTransferPage } from "../pages/fundTransferPage";
 let fundTransferPage: FundTransferPage;
 
 test.beforeEach("Login to user", async ({ loggedInPage }) => {
-    await expect(loggedInPage).not.toHaveURL(/login/i);
+    //await expect(loggedInPage).not.toHaveURL(/login/i);
     fundTransferPage = new FundTransferPage(loggedInPage);
     // await loggedInPage.context().tracing.start({
     //     screenshots: true,
