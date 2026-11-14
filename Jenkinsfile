@@ -97,6 +97,11 @@ pipeline {
         testResults: 'reports/results.xml',
         allowEmptyResults: true
         )
+        allure([
+        includeProperties: false,
+        jdk: '',
+        results: [[path: 'allure-results']]
+    ])
     
     archiveArtifacts(
         artifacts: '''
