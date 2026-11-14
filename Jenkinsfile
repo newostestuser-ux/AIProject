@@ -31,6 +31,11 @@ pipeline {
                 bat 'copy .env.example .env'
             }
         }
+        stage('Debug') {
+    steps {
+        bat 'dir'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
