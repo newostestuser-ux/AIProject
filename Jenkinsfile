@@ -60,13 +60,22 @@ pipeline {
         deleteDir()
     }
 }
+stage('Debug Workspace') {
+    steps {
+        bat '''
+        echo WORKSPACE=%WORKSPACE%
+        cd
+        dir
+        '''
+    }
+}
         stage('Run Playwright Tests') {
-            steps {
-                bat 'docker compose up --abort-on-container-exit --exit-code-from playwright-tests'
-            }
+    steps {
+        dir("${WORKSPACE}") {
+            bat 'docker compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from playwright-tests'
         }
     }
-
+}
     post {
 
         always {
