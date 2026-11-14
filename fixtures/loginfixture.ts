@@ -5,6 +5,7 @@ dotenv.config();
 
 type Fixtures={
     loggedInPage:Page;
+
 };
 
 
@@ -33,7 +34,7 @@ export const test=base.extend<Fixtures>({
         //  }
         //  await page.getByTestId("verifyOtpBtn").click()
 
-         await page.waitForTimeout(3000)
+    
 
          await page.waitForLoadState("domcontentloaded");
 
