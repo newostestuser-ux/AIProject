@@ -60,6 +60,7 @@ export class FundTransferPage{
 
     async selectPaymentMethod():Promise<any>{
         await this.optforFundTransfer.click()
+        await this.continuebtn.isVisible()
         await this.continuebtn.click()
         return await this.selectbenPage.innerText();
     }
