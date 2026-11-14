@@ -26,11 +26,23 @@ pipeline {
             }
         }
 
-        stage('Create Env File') {
-            steps {
-                bat 'copy .env.example .env'
-            }
+       stage('Create Env File') {
+    steps {
+        withCredentials([
+            string(credentialsId: 'WEB_DB_URL', variable: 'WEB_DB_URL'),
+            string(credentialsId: 'WEB_APP_URL', variable: 'WEB_APP_URL'),
+            string(credentialsId: 'WEB_APP_REG_URL', variable: 'WEB_APP_REG_URL')
+        ]) {
+            bat '''
+            (
+            echo WEB_DB_URL=%WEB_DB_URL%
+            echo WEB_APP_URL=%WEB_APP_URL%
+            echo WEB_APP_REG_URL=%WEB_APP_REG_URL%
+            ) > .env
+            '''
         }
+    }
+}
         stage('Debug') {
     steps {
         bat 'dir'
